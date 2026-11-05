@@ -1,0 +1,28 @@
+# Local secrets and runtime data
+.env
+.env.*
+!.env.example
+credentials*.json
+client_secret*.json
+token*.json
+*.pem
+*.key
+*.sqlite
+*.sqlite3
+*.db
+*.db-*
+*.sqlite-*
+*.sqlite3-*
+
+# Python and local tooling
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+dist/
+build/
+*.egg-info/
+.DS_Store
