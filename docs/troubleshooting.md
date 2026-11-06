@@ -2,7 +2,7 @@
 
 | Symptom | What to check |
 | --- | --- |
-| Installer cannot find `main` or returns 404 | Use repo `apurva-2124/uno-reverse-email-agent`, ref `setup/proposal`, path `.agents/skills/uno-reverse`. Keep ref and path separate because the branch name contains a slash. |
+| Installer returns 404 | Use repo `apurva-2124/uno-reverse-email-agent`, ref `main`, path `.agents/skills/uno-reverse`. |
 | Skill is missing | Try the next turn, then restart Codex if needed. With a checkout, open the repository folder. Confirm the entire skill folder exists and the host has not disabled it. See [skill discovery](https://learn.chatgpt.com/docs/build-skills). |
 | Installer says destination exists | Inspect the existing skill first. Back it up before replacing it; do not overwrite a customized installation blindly. |
 | Two Uno Reverse entries appear | A personal installation and repository checkout may both be discovered. Choose one and disable the duplicate in your host. |
