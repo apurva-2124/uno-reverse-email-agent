@@ -2,11 +2,27 @@
 
 **An agent skill that turns incoming sales outreach into a pitch for your business.**
 
-No app, dashboard, local web server or separate model subscription. Talk to your agent, connect your existing email tools, preview a pitch and optionally enable scheduled autopilot.
+Uses your existing agent and its model access; no standalone app, dashboard or local web server. Talk to your agent, connect your existing email tools, preview a pitch and optionally enable scheduled autopilot.
 
 ## Start here
 
-Install the [`uno-reverse` skill](.agents/skills/uno-reverse/SKILL.md) using your agent's skill installer, pointing it at this private repository and the `.agents/skills/uno-reverse` folder. The installer needs access to the repository. For a local checkout, repo-aware Codex can discover the skill under `.agents/skills`; other compatible hosts can use the same folder according to their own installation instructions.
+In Codex, paste this install prompt:
+
+```text
+Use $skill-installer to install apurva-2124/uno-reverse-email-agent,
+path .agents/skills/uno-reverse, ref setup/proposal.
+```
+
+The explicit ref matters: this repository's default branch is `setup/proposal`, not `main`. Start your next turn after installation; if the skill is missing, restart Codex. The `$` syntax mentions a skill; it is not a price or a shell command.
+
+Prefer a local checkout? With Git installed:
+
+```sh
+git clone --branch setup/proposal https://github.com/apurva-2124/uno-reverse-email-agent.git
+cd uno-reverse-email-agent
+```
+
+Open that folder in Codex; it can discover `.agents/skills/uno-reverse` as a repository skill. Keep the checkout available for future runs. See the [first-run guide](docs/getting-started.md) for requirements, Gmail setup and scheduling, or [troubleshooting](docs/troubleshooting.md) if you get stuck.
 
 Then ask:
 
@@ -22,6 +38,17 @@ Your agent will:
 6. Activate and schedule only after you explicitly approve the sending policy.
 
 The skill uses the host's connected email tools. It does not include an email connection or grant mailbox access. If sending or scheduling is unavailable, the agent explains what is missing and stays in preview. Installing the skill alone never sends emails or starts an automation.
+
+## What works today
+
+Initial reverse pitches, reply monitoring and decline/bounce suppression are described by the skill. **Automatic follow-up messages, replies to interested people and meeting scheduling are not implemented.** The agent surfaces meaningful replies for you to handle.
+
+| Environment | Validation / requirements |
+| --- | --- |
+| Codex local skill | Public download installation and Python helper tested; requires Python 3.11+ for durable state. |
+| Gmail in your agent host | Requires connected read, threaded send, Sent inspection and label tools. Live end-to-end sending has not been tested. |
+| Scheduled autopilot | Requires host scheduling, suitable permissions and the same persistent ledger on every run. No live scheduled send test yet. |
+| Other skill-compatible agents | May use the skill folder, but compatibility is untested; verify tools and local script execution first. |
 
 ## Optional BrandVault
 
@@ -58,4 +85,6 @@ Tests do not send mail or access Gmail/Optimly. Unknown send outcomes retain the
 
 Read [the current design](docs/skill-design.md) for the architecture and limitations. The [original proposal](docs/proposal.md) is historical and is superseded wherever it describes a standalone app, custom Gmail OAuth, a browser UI or a bundled classifier. The earlier app prototype was withdrawn at the owner's request.
 
-This repository remains private. Naming and license review are pending; no public release or open-source license is implied.
+## License
+
+[MIT](LICENSE). The historical proposal’s pending Apache-2.0 suggestion is superseded by this license.
