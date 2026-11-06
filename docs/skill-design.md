@@ -1,6 +1,6 @@
-# Skill-first design — November 5, 2026
+# Skill architecture
 
-The owner replaced the original standalone application with a reusable agent skill. This document supersedes conflicting architecture, setup and distribution sections in the original proposal. The app/UI is not part of this project.
+Uno Reverse is a self-contained agent skill with instructions, supporting references and a local Python helper. The host provides connected tools and execution.
 
 ## Responsibilities
 
@@ -26,4 +26,4 @@ The host must expose authoritative headers, complete threads, correctly threaded
 
 Scheduling requires access to the same durable state; this is not an out-of-the-box cloud service. Interrupted runs remain locked until the old run is verified stopped. Uncertain delivery correlation needs user review. Label undo can only reverse captured deltas, and cannot unsend mail or perfectly attribute concurrent manual label edits.
 
-No live mailbox, signup, publication or scheduled send was used to build or test this skill. The original app prototype is retained only in Git history for recovery, not as active code or a required runtime.
+No live mailbox, signup, publication or scheduled send was used to build or test this skill.

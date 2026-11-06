@@ -2,7 +2,7 @@
 
 **An agent skill that turns incoming sales outreach into a pitch for your business.**
 
-Uses your existing agent and its model access; no standalone app, dashboard or local web server. Talk to your agent, connect your existing email tools, preview a pitch and optionally enable scheduled autopilot.
+Use your existing agent and its model access. Connect your email tools, preview a pitch and optionally enable scheduled autopilot.
 
 ## Start here
 
@@ -10,15 +10,15 @@ In Codex, paste this install prompt:
 
 ```text
 Use $skill-installer to install apurva-2124/uno-reverse-email-agent,
-path .agents/skills/uno-reverse, ref setup/proposal.
+path .agents/skills/uno-reverse from the main branch.
 ```
 
-The explicit ref matters: this repository's default branch is `setup/proposal`, not `main`. Start your next turn after installation; if the skill is missing, restart Codex. The `$` syntax mentions a skill; it is not a price or a shell command.
+Start your next turn after installation; if the skill is missing, restart Codex. The `$` syntax mentions a skill; it is not a price or a shell command.
 
 Prefer a local checkout? With Git installed:
 
 ```sh
-git clone --branch setup/proposal https://github.com/apurva-2124/uno-reverse-email-agent.git
+git clone https://github.com/apurva-2124/uno-reverse-email-agent.git
 cd uno-reverse-email-agent
 ```
 
@@ -83,8 +83,8 @@ python3 .agents/skills/uno-reverse/scripts/ledger.py --help
 
 Tests do not send mail or access Gmail/Optimly. Unknown send outcomes retain their brand reservation and pause new sends; they are never automatically retried. A cleared search result is not proof that a send failed. The helper is an agent aid, not an independent security boundary against a host that ignores its instructions.
 
-Read [the current design](docs/skill-design.md) for the architecture and limitations. The [original proposal](docs/proposal.md) is historical and is superseded wherever it describes a standalone app, custom Gmail OAuth, a browser UI or a bundled classifier. The earlier app prototype was withdrawn at the owner's request.
+Read [the design](docs/skill-design.md) for architecture and limitations, and [contributing](CONTRIBUTING.md) to propose changes.
 
 ## License
 
-[MIT](LICENSE). The historical proposal’s pending Apache-2.0 suggestion is superseded by this license.
+[MIT](LICENSE).

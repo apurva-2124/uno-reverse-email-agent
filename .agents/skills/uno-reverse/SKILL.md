@@ -5,7 +5,7 @@ description: Turn incoming sales outreach into a reverse pitch for the user's bu
 
 # Uno Reverse
 
-Operate through the agent's chat and connected email tools. No web UI, standalone server, separate model API, or custom Gmail OAuth app is required. The host supplies the model, mailbox connection, permissions and scheduler. This skill supplies the workflow and a local ledger. It does not itself run in the background.
+Operate through the agent's chat and connected email tools. The host supplies the model, mailbox connection, permissions and scheduler. This skill supplies the workflow and a local ledger. It does not itself run in the background.
 
 ## Choose the mode
 
