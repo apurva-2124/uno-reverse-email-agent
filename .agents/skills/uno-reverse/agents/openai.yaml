@@ -1,0 +1,4 @@
+interface:
+  display_name: "Uno Reverse"
+  short_description: "Reverse-pitch outreach with optional BrandVault"
+  default_prompt: "Use $uno-reverse to preview a pitch for my business and help me configure email autopilot."
